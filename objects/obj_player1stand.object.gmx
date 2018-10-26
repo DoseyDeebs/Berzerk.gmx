@@ -8,6 +8,32 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>ShootDir</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -31,28 +57,28 @@ keyUp = keyboard_check(vk_up)
 keyDown = keyboard_check(vk_down)
 
 if (keyUp &amp;&amp; keyRight)
-{x+=0.2; y-=0.2; sprite_index=spr_player1move; image_xscale = 1;}
+{x+=0.2; y-=0.2; sprite_index=spr_player1move; image_xscale = 1; ShootDir = 45;}
 
 else if (keyUp &amp;&amp; keyLeft)
-{x-=0.2; y-=0.2; sprite_index=spr_player1move; image_xscale = -1;}
+{x-=0.2; y-=0.2; sprite_index=spr_player1move; image_xscale = -1; ShootDir = 145;}
 
 else if (keyDown &amp;&amp; keyRight)
-{x+=0.2; y+=0.2; sprite_index=spr_player1move; image_xscale = 1;}
+{x+=0.2; y+=0.2; sprite_index=spr_player1move; image_xscale = 1; ShootDir = 315;}
 
 else if (keyDown &amp;&amp; keyLeft)
-{x-=0.2; y+=0.2; sprite_index=spr_player1move; image_xscale = -1;}
+{x-=0.2; y+=0.2; sprite_index=spr_player1move; image_xscale = -1; ShootDir = 225;}
 
 else if keyUp
-{x+=0; y-=0.2; sprite_index=spr_player1move;}
+{x+=0; y-=0.2; sprite_index=spr_player1move; ShootDir = 90;}
 
 else if keyLeft
-{x-=0.2; y-=0; sprite_index=spr_player1move; image_xscale = -1;}
+{x-=0.2; y-=0; sprite_index=spr_player1move; image_xscale = -1; ShootDir = 180;}
 
 else if keyDown
-{x+=0; y+=0.2; sprite_index=spr_player1move;}
+{x+=0; y+=0.2; sprite_index=spr_player1move; ShootDir = 270;}
 
 else if keyRight
-{x+=0.2; y-=0; sprite_index=spr_player1move; image_xscale = 1;}
+{x+=0.2; y-=0; sprite_index=spr_player1move; image_xscale = 1; ShootDir = 0}
 </string>
           </argument>
         </arguments>
@@ -87,21 +113,21 @@ else if keyRight
     <event eventtype="5" enumb="32">
       <action>
         <libid>1</libid>
-        <id>541</id>
+        <id>206</id>
         <kind>0</kind>
-        <userelative>0</userelative>
+        <userelative>-1</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>1</exetype>
-        <functionname>action_sprite_set</functionname>
+        <functionname>action_create_object_motion</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
-        <relative>0</relative>
+        <relative>-1</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>5</kind>
-            <sprite>spr_player1stand</sprite>
+            <kind>10</kind>
+            <object>-100</object>
           </argument>
           <argument>
             <kind>0</kind>
@@ -109,7 +135,15 @@ else if keyRight
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1</string>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>5</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>ShootDir</string>
           </argument>
         </arguments>
       </action>
