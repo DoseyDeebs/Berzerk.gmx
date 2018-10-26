@@ -13,6 +13,7 @@
     <sprite>sprites\spr_enemy1</sprite>
     <sprite>sprites\sprite4</sprite>
     <sprite>sprites\spr_enemyscout3</sprite>
+    <sprite>sprites\bullet1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -23,6 +24,7 @@
     <object>objects\obj_player1stand</object>
     <object>objects\obj_enemy1</object>
     <object>objects\spr_enemy6</object>
+    <object>objects\bullets</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
